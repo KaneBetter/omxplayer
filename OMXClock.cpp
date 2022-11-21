@@ -504,6 +504,8 @@ bool OMXClock::OMXSetSpeed(int speed, bool lock /* = true */, bool pause_resume 
         UnLock();
       return false;
     }
+    if (speed)
+      m_omx_speed = speed;
   }
   if (!pause_resume)
     m_omx_speed = speed;

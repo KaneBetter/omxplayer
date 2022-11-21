@@ -562,7 +562,7 @@ OMXControlResult OMXControl::handle_event(DBusMessage *m)
         if(iSpeed > MAX_RATE)
           iSpeed=MAX_RATE;
         dbus_respond_double(m, iSpeed/1000.);//Reply before applying to be faster
-        clock->OMXSetSpeed(iSpeed, true, true);
+        clock->OMXSetSpeed(iSpeed, false, true);
         return KeyConfig::ACTION_PLAY;
       }
       //Wrong property
